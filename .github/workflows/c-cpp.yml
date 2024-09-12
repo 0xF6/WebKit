@@ -17,19 +17,19 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: install deps
-      run: winget install --disable-interactivity --accept-package-agreements --scope=machine --id Git.Git 
+      run: winget install --scope=machine --id Git.Git --disable-interactivity --accept-source-agreements
     - name: install deps
-      run: winget install --disable-interactivity --accept-package-agreements --scope=machine --id Kitware.CMake 
+      run: winget install --scope=machine --id Kitware.CMake --disable-interactivity --accept-source-agreements
     - name: install deps
-      run: winget install --disable-interactivity --accept-package-agreements --scope=machine --id Ninja-build.Ninja
+      run: winget install --scope=machine --id Ninja-build.Ninja --disable-interactivity --accept-source-agreements
     - name: install deps
-      run: winget install --disable-interactivity --accept-package-agreements --scope=machine --id Python.Python.3.11
+      run: winget install --scope=machine --id Python.Python.3.11 --disable-interactivity --accept-source-agreements
     - name: install deps
-      run: winget install --disable-interactivity --accept-package-agreements --scope=machine --id RubyInstallerTeam.Ruby.3.2
+      run: winget install --scope=machine --id RubyInstallerTeam.Ruby.3.2 --disable-interactivity --accept-source-agreements
     - name: install deps
-      run: winget install --disable-interactivity --accept-package-agreements --scope=machine --id ApacheFriends.Xampp.8.2
+      run: winget install --scope=machine --id ApacheFriends.Xampp.8.2 --disable-interactivity --accept-source-agreements
     - name: install deps
-      run: winget install --disable-interactivity --accept-package-agreements --scope=machine --id LLVM.LLVM
+      run: winget install --scope=machine --id LLVM.LLVM --disable-interactivity --accept-source-agreements
     - uses: actions/checkout@v4
     - name: perl build
       run: perl Tools/Scripts/build-webkit --release
