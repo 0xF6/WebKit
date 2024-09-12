@@ -16,8 +16,20 @@ jobs:
       uses: Cyberboss/install-winget@v1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/checkout@v4
     - name: install deps
-      run: winget install --scope=machine --id Git.Git Kitware.CMake Ninja-build.Ninja Python.Python.3.11 RubyInstallerTeam.Ruby.3.2 ApacheFriends.Xampp.8.2 LLVM.LLVM
+      run: winget install --scope=machine --id Git.Git 
+    - name: install deps
+      run: winget install --scope=machine --id Kitware.CMake 
+    - name: install deps
+      run: winget install --scope=machine --id Ninja-build.Ninja
+    - name: install deps
+      run: winget install --scope=machine --id Python.Python.3.11
+    - name: install deps
+      run: winget install --scope=machine --id RubyInstallerTeam.Ruby.3.2
+    - name: install deps
+      run: winget install --scope=machine --id ApacheFriends.Xampp.8.2
+    - name: install deps
+      run: winget install --scope=machine --id LLVM.LLVM
+    - uses: actions/checkout@v4
     - name: perl build
       run: perl Tools/Scripts/build-webkit --release
