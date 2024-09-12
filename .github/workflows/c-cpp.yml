@@ -18,18 +18,25 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: install deps
       run: winget install --scope=machine --id Git.Git --disable-interactivity --accept-source-agreements --no-upgrade
+      continue-on-error: true
     - name: install deps
       run: winget install --scope=machine --id Kitware.CMake --disable-interactivity --accept-source-agreements --no-upgrade
+      continue-on-error: true
     - name: install deps
       run: winget install --scope=machine --id Ninja-build.Ninja --disable-interactivity --accept-source-agreements --no-upgrade
+      continue-on-error: true
     - name: install deps
       run: winget install --scope=machine --id Python.Python.3.11 --disable-interactivity --accept-source-agreements --no-upgrade
+      continue-on-error: true
     - name: install deps
       run: winget install --scope=machine --id RubyInstallerTeam.Ruby.3.2 --disable-interactivity --accept-source-agreements --no-upgrade
+      continue-on-error: true
     - name: install deps
       run: winget install --scope=machine --id ApacheFriends.Xampp.8.2 --disable-interactivity --accept-source-agreements --no-upgrade
+      continue-on-error: true
     - name: install deps
       run: winget install --scope=machine --id LLVM.LLVM --disable-interactivity --accept-source-agreements --no-upgrade
+      continue-on-error: true
     - uses: actions/checkout@v4
     - name: perl build
       run: perl Tools/Scripts/build-webkit --release
